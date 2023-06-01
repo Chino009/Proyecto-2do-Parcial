@@ -1,0 +1,39 @@
+@page
+@model TecNM.Proyecto.WebSite.Pages.GameCategory.ListModel
+
+<div class="container-fluid">
+    <form method="get">
+        <div class="row">
+            <div class="col-md-8"></div>
+            <div class="col-md-4">
+                <br/>
+                <button id="btnSearch" class="btn btn-primary mr-3">Search</button>
+                
+            </div>
+        </div>
+    </form>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th></th>
+            </tr>
+            @foreach (var category in @Model.Game)
+            {
+                <tr>
+                    <td>@category.Name</td>
+                    <td>
+                        <a a-asp-area="" asp-page="/Game/Edit" asp-route-id="@category.Id"
+                           class="btn btn-primary" role="button">Edit</a>
+                        <a a-asp-area="" asp-page="/Game/Delete" asp-route-id="@category.Id"
+                           class="btn btn-danger" role="button">Delete</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="col-md-1"></div>
+</div>
+</div>
